@@ -32,8 +32,9 @@ class PriorityQueue {
 
     pop(val) {
         const {pq} = this;
-        [pq[1], pq[--this.len]] = [pq[this.len], pq[1]];
-        shiftDown(1);
+        [pq[1], pq[this.len]] = [pq[this.len], pq[1]];
+        --this.len;
+        if(this.len > 0) shiftDown(1);
     }
 }
 
